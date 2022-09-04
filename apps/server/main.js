@@ -308,7 +308,7 @@ const user_1 = __webpack_require__("./libs/server/models/user/src/index.ts");
 passport.use(new TwitterStrategy.Strategy({
     consumerKey: process.env.TWITTER_CONSUMER_KEY,
     consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
-    callbackURL: 'http://localhost:3333/auth/twitter/callback',
+    callbackURL: '/auth/twitter/callback',
 }, function (token, tokenSecret, profile, cb) {
     // console.log('twitter profile =', profile)
     // console.log('token *=', token);
