@@ -202,13 +202,11 @@ tslib_1.__exportStar(__webpack_require__("./libs/server/db/src/lib/server-db.ts"
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const mongoose_1 = __webpack_require__("mongoose");
-const dev = "development" !== 'production';
-const URI = dev ? 'mongodb://localhost/twitterapp' : process.env.DB_URI;
-(0, mongoose_1.connect)(URI, (err) => {
+(0, mongoose_1.connect)(process.env.DB_URI, (err) => {
     if (err) {
         return console.error(err);
     }
-    console.log('mongoose is connected to: ', URI);
+    console.log('mongoose is connected to: ', process.env.DB_URI);
 });
 
 
@@ -639,6 +637,8 @@ var __webpack_exports__ = {};
 var exports = __webpack_exports__;
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
+const dotenv = __webpack_require__("dotenv");
+dotenv.config();
 __webpack_require__("./libs/server/db/src/index.ts");
 const app_1 = __webpack_require__("./libs/server/app/src/index.ts");
 const port = process.env.PORT || 3333;
