@@ -35,7 +35,7 @@ exports.app = app;
 const mongoDbStore = MongoDBStore(session);
 const store =  true
     ? new mongoDbStore({
-        uri: 'mongodb://localhost/twitterapp',
+        uri: process.env.DB_URI,
         collection: 'session',
     })
     : 0;
