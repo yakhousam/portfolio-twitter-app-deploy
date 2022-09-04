@@ -1,0 +1,100 @@
+:root {
+  --background-color: #5f6dec;
+  --primary-text: #fff;
+  --secondary-text: #4aa8fc;
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  background-color: var(--background-color);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.main {
+  height: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.wrapperText {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  z-index: 1;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: capitalize;
+  margin: 0;
+  max-width: 15ch;
+  color: var(--primary-text);
+}
+.titleEmphasis {
+  color: var(--secondary-text);
+}
+.subtitle {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.2;
+  color: var(--primary-text);
+  font-weight: 700;
+  width: 25ch;
+}
+.button {
+  background-color: #ed9c09;
+  color: var(--primary-text);
+  padding: 1rem 2rem;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.button a {
+  color: var(--primary-text);
+  text-decoration: none;
+}
+.button:hover {
+  background-color: #d38a06;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 4px 6px;
+}
+
+.illustration {
+  grid-column: 3 / -1;
+  grid-row: 1;
+  background-image: url('/illustration.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+@media (max-width: 600px) {
+  .illustration {
+    background: none;
+  }
+  .title {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1500px) {
+  .main {
+    min-width: 1400px;
+  }
+}
