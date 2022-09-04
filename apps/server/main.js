@@ -236,6 +236,7 @@ const headersSentErrorMessaage = {
 function errorMiddleware(error, req, res, 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 next) {
+    console.error(error);
     if (res.headersSent) {
         return res.end(JSON.stringify(headersSentErrorMessaage));
     }
@@ -359,15 +360,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const express = __webpack_require__("express");
 const passport = __webpack_require__("passport");
 const router = express.Router();
-router.get('/auth/twitter', (req, res, next) => {
-    try {
-        passport.authenticate('twitter')(req, res, next);
-    }
-    catch (error) {
-        console.error(error);
-        next();
-    }
-});
+router.get('/auth/twitter', passport.authenticate('twitter'));
 router.get('/auth/twitter/callback', passport.authenticate('twitter', {
     failureRedirect: '/',
     successRedirect: '/',
