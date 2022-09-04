@@ -2,7 +2,7 @@
   "name": "yak-twitter-app-deploy",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "./apps/server/main.js",
   "scripts": {
     "start": "node ./apps/server/main.js"
   },
